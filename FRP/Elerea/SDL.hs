@@ -16,7 +16,7 @@ type Ticks = Word32
 sdlLoop ::
 	Ticks
 	-- ^ Frame duration / Frame time
-	-> (SignalGen Ticks (Signal [SDL.Event]) -> SignalGen Ticks (Signal a))
+	-> (SignalGen p (Signal [SDL.Event]) -> SignalGen Ticks (Signal a))
 	-- ^ 'Signal' network, takes event 'SignalGen' as argument
 	-> IO [a]
 sdlLoop frameTime network = do
